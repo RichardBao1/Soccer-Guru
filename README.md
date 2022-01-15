@@ -22,3 +22,7 @@ Call print_top() to print the cards with best overall base stats. This function 
 - league: the league of the card you want to see e.g. FRA 1
 - country: a unique id that corresponds to country e.g. '12' (probably leave empty)
 - show_number: how many rows/cards you want printed out
+
+``` 
+print_top(100, league="FRA 1", country="", show_number=10)
+```
