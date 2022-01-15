@@ -93,7 +93,7 @@ class SoccerGuru():
         print("Completed")
 
 
-def print_top(max_rating, league="", country="", show_number=10):
+def print_top(max_rating=100, league="", country="", show_number=10):
     a = SoccerGuru()
     player_dict = a.unload_pickle()
     player_dict = a.filter(player_dict, max_rating, league, country)
@@ -101,9 +101,13 @@ def print_top(max_rating, league="", country="", show_number=10):
     overall_list.sort()
     overall_list = reversed(overall_list)
 
+    print("Displayed in form: [name, rating, league, country id, position]")
     for i in range(show_number):
-        overall = next(overall_list)
-        print(player_dict[overall], overall)
+        try:
+            overall = next(overall_list)
+            print("Overall base stats is " + str(overall) + ": ", player_dict[overall])
+        except:
+            break
 
 
 def create():
